@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
-import styled from '@emotion/styled';
-import { AiOutlineSearch } from 'react-icons/ai';
-
+import React, { useRef, useState } from "react";
+import styled from "@emotion/styled";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Base = styled.header`
   width: 100%;
@@ -22,8 +21,7 @@ const Navigation = styled.nav`
   max-width: 1200px;
 `;
 
-const MenuListWrapper = styled.div`
-`;
+const MenuListWrapper = styled.div``;
 
 const MenuList = styled.ul`
   list-style: none;
@@ -44,7 +42,7 @@ const Menu = styled.li`
 
 const MenuButton = styled.button<{ active?: boolean }>`
   font-size: 15px;
-  color: ${({ active }) => active ? 'rgb(53, 53, 53)' : 'rgb(126, 126, 126)'};
+  color: ${({ active }) => (active ? "rgb(53, 53, 53)" : "rgb(126, 126, 126)")};
   cursor: pointer;
   border: none;
   background: none;
@@ -170,13 +168,14 @@ const SignUp = styled.button`
   margin: 15px 0;
 `;
 
-const Header: React.FC = () => {
+interface Props {}
 
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
+const Header: React.FC = () => {
+  const [searchKeyword, setSearchKeyword] = useState<string>("");
 
   const handleKeyword = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchKeyword(e.target.value);
-  }
+  };
 
   return (
     <Base>
@@ -226,8 +225,7 @@ const Header: React.FC = () => {
         </MenuListWrapper>
       </Navigation>
     </Base>
-  )
-
-}
+  );
+};
 
 export default Header;
